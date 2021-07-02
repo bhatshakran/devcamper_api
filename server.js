@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const colors = require("colors");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const fileupload = require("express-fileupload");
 const errorHandler = require("./middlewares/error");
@@ -22,6 +23,9 @@ const app = express();
 
 // Body parser
 app.use(express.json())
+
+// Cookie Parser
+app.use(cookieParser())
 
 // Dev loggin middleware
 if (process.env.NODE_ENV === "development") {
