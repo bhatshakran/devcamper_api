@@ -1,5 +1,6 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
+
 const User = require("../models/User");
 
 // @desc Register User
@@ -7,5 +8,14 @@ const User = require("../models/User");
 // @access Public
 
 exports.register = asyncHandler(async (req, res, next) => {
-  res.status(200).json({ success: true });
+  const { name, email, password, role } = req.body;
+
+  // Create user
+  const user = await User.create({
+    name,
+    email,
+    password,
+    role,
+  });
+  res.status(200).json({ success: true, user });
 });
