@@ -3,7 +3,7 @@ const Bootcamp = require("../models/Bootcamp");
 const path = require("path");
 const geocoder = require("../utils/geocoder");
 const asyncHandler = require('../middlewares/async');
-const { kMaxLength } = require("buffer");
+
 
 
 // @desc Get all bootcamps
