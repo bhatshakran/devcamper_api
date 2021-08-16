@@ -15,3 +15,5 @@ router.route("/").get(
   }),
   getReviews
 );
+
+module.exports = router;
